@@ -1,7 +1,7 @@
 import React from "react";
-import * as Yup from "yup";
 
 export default function Form(props) {
+  const { disabled } = props;
   return (
     <div className="build-pizza">
       <form onSubmit={props.submit}>
@@ -43,7 +43,7 @@ export default function Form(props) {
             Pepperoni{" "}
             <input
               checked={props.pizzaOrder.pepperoni}
-              onChange={props.onInputChange}
+              onChange={props.onCheckboxChange}
               name="pepperoni"
               id="pepperoni"
               type="checkbox"
@@ -53,7 +53,7 @@ export default function Form(props) {
             Olives{" "}
             <input
               checked={props.pizzaOrder.olives}
-              onChange={props.onInputChange}
+              onChange={props.onCheckboxChange}
               name="olives"
               id="olives"
               type="checkbox"
@@ -63,7 +63,7 @@ export default function Form(props) {
             Ham{" "}
             <input
               checked={props.pizzaOrder.ham}
-              onChange={props.onInputChange}
+              onChange={props.onCheckboxChange}
               name="ham"
               id="ham"
               type="checkbox"
@@ -73,7 +73,7 @@ export default function Form(props) {
             Onion{" "}
             <input
               checked={props.pizzaOrder.onion}
-              onChange={props.onInputChange}
+              onChange={props.onCheckboxChange}
               name="onion"
               id="onion"
               type="checkbox"
@@ -93,8 +93,12 @@ export default function Form(props) {
             type="text"
           />
         </section>
-        <div className="errors">{props.errors.name}</div>
-        <button>Add to Order</button>
+        <div id="error" className="errors">
+          {props.errors.name}
+        </div>
+        <button id="submit" disabled={disabled}>
+          Add to Order
+        </button>
       </form>
     </div>
   );

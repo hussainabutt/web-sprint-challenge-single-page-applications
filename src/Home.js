@@ -9,7 +9,7 @@ export default function Home(props) {
       <section className="pizza-delivery">
         <h1>Your Favorite Food Delivered While Coding</h1>
         <Link to="/pizza">
-          <button>Pizza?</button>
+          <button>¿Pizza?</button>
         </Link>
       </section>
     </div>
